@@ -97,14 +97,14 @@ public class MainActivity extends AppCompatActivity {
         RequestBody body = RequestBody.create(jsonBody.toString(),JSON);
         Request request = new Request.Builder()
                 .url("https://api.openai.com/v1/completions")
-                .header("Authorization","Bearer YOUR_API_KEY")
+                .header("Authorization","Bearer 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")
                 .post(body)
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                addResponse("Failed to load response due to "+e.getMessage());
+                addResponse("Erreur du "+e.getMessage());
             }
 
             @Override
